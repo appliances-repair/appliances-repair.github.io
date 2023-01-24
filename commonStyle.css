@@ -1,0 +1,68 @@
+:root {
+  --header-color: #fff;
+  --header-text-color: #151515;
+  --header-hover-border: #FF5252;
+  --inter-font-family: 'Inter';
+  --mplus-font-family: 'M PLUS 1';
+  --book-button-color: #FF5252;
+  --book-button-text-color: #F7F7F7;
+}
+
+/* NAVIGATION */
+#nav-toggle {
+  display: none;
+}
+
+header {
+  width: 100%;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--header-color);
+  font-family: var(--inter-font-family), sans-serif;
+}
+
+#nav-logo {
+  margin-left: 8.33%;
+  width: 20%;
+}
+
+nav {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+nav ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none
+}
+
+nav ul li {
+  padding-right: 7%;
+}
+
+nav a {
+  /* Don't shrink lesser than 16px */
+  font-size: max(1.2vw, 16px);
+  padding: 4px 0;
+  color: var(--header-text-color);
+  text-decoration: none;
+}
+
+nav a:hover {
+  border-bottom: 1px solid var(--header-hover-border);
+}
+
+#nav-phone {
+  /* width: 50%; */
+  white-space: nowrap;
+  font-size: max(2vw, 20px);
+  font-weight: 500;
+  padding: 0 9%;
+}
