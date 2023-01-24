@@ -168,13 +168,6 @@ html, body {
   right: 0;
 }
 
-/* RESPONSIVE CSS */
-@media only screen and (max-width: 600px) {
-  #carousel ul li div {
-    display: none;
-  }
-}
-
 /* DEMO CSS */
 #carousel ul li:nth-child(2) {
   background-image: url(./media/hero/freeDiagnostic.png);
