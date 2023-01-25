@@ -144,20 +144,75 @@ function debounce(fn) {
   };
 }
 
+const servicesData = {
+  ovens: {
+    title: "Ovens / Microwaves Repair Service",
+    description:
+      "There are plenty of microwave types manufacturedby various brands. We can repair at home any of them. No matter what specific type of microwaves you use.In case of microwave malfunctioning, contact Master Appliance to repair your oven. With our vast experience in microwave repairing, you will get the best service and quality repair.",
+  },
+  garbages: {
+    title: "Garbage Disposal Repair Service",
+    description:
+      "Our company has a long-term experience in garbage disposals services. Trained and licensed technicians will reach you the same day in San Jose, professionally fix your garbage disposals, and provide advice on how to prevent a breakdown in the future.",
+  },
+  ranges: {
+    title: "Ranges / Cooktops Repair Service",
+    description:
+      "Ranges / Cooktops can be a smart machine with an electronic control board or a usual one, a freestanding or built-in appliance. But each of them is a complex appliance requiring expert assistance in case of breakdown. Master Appliance repairs all types and major brands of ranges. A stove is like a range, and we can repair it too.",
+  },
+  refrigerators: {
+    title: "Refrigerator Repair Service",
+    description:
+      "We repair all major brands of refrigerators, from old models to modern smart ones. All fridges require anti-bacteria treatment from time to time. Refrigerator ozone cleaning service is the best solution to wipe out harmful problem-cause bacteria from your fridge and keep your food fresh. The standard price for this service is $249, but you can get it for $179 if order any appliance repair.",
+  },
+  vents: {
+    title: "Range Hood Repair Service",
+    description: "",
+  },
+  dishwashers: {
+    title: "Dishwasher Repair Service",
+    description:
+      "Any brands and types. Regardless of your dishwasher’s version, we provide the best quality repair service. Master Appliance uses only high-quality appliance parts delivered by trusted official suppliers and gives up to 1-year parts and labor warranty for your appliance. Regardless of the type of your home dishwasher, remember that smart technologies make them advanced appliances. Only highly skilled technicians are allowed to appliance repair San Jose such dishwashers at home.",
+  },
+  washers: {
+    title: "Washer Repair Service",
+    description:
+      "Stackable Washer, Top/Front Load Machine or Washer/DryerCombo - all types listed can be semi or full-automatic washers and all can be repaired. Order appliance repair San Jose CA right now!",
+  },
+  stackables: {
+    title: "Stackable Repair Service",
+    description:
+      "Stackable Washer, Top/Front Load Machine or Washer/Dryer/Combo - all types listed can be semi or full-automatic washers and all can be repaired. Order appliance repair San Jose CA right now!",
+  },
+  dryers: {
+    title: "Dryers Repair Service",
+    description:
+      "Washer/Dryer/Combo, Stackable Washer, or Top/Front Load Machine - all types listed can be semi or full-automatic washers and all can be repaired. Order appliance repair San Jose CA right now!",
+  },
+};
+
 const learnMoreButtons = document.querySelectorAll(".modal-toggle");
 const modalMask = document.querySelector(".mask");
 const closeModalBtn = document.querySelector(".close-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalDesc = document.getElementById("modal-description");
 
-function showModal() {
+function showModal(serviceId) {
+  modalTitle.textContent = servicesData[serviceId].title;
+  modalDesc.textContent = servicesData[serviceId].description;
   modalMask.classList.add("active");
 }
 
 function closeModal() {
   modalMask.classList.remove("active");
+  modalTitle.textContent = "";
+  modalDesc.textContent = "";
 }
 
 for (let i = 0; i < learnMoreButtons.length; i += 1) {
-  learnMoreButtons[i].addEventListener("click", showModal);
+  learnMoreButtons[i].addEventListener("click", (event) =>
+    showModal(event.target.id)
+  );
 }
 
 modalMask.addEventListener("click", closeModal);
