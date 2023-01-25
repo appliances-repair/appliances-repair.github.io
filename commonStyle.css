@@ -93,10 +93,11 @@ a.nav-item {
 }
 
 #nav-tog:checked~.main-nav {
-  transition: height .0s ease-in 0s, opacity .2s ease-in 0s, top .23s ease-out .21s;
+  transition: height .23s ease-in 0s, opacity .2s ease-in 0s, top .23s ease-out .21s;
   opacity: 0.95;
   height: 100vh;
   top: 0%;
+  overflow-y: scroll;
 }
 
 /* ============================
