@@ -1,0 +1,23 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_138_44)">
+<line x1="15.4142" y1="0.414214" x2="2.41421" y2="13.4142" stroke="#151515" stroke-width="4"/>
+<line x1="32.4142" y1="-0.585786" x2="1.41421" y2="30.4142" stroke="#151515" stroke-width="4"/>
+<line x1="47.4142" y1="0.414214" x2="2.41421" y2="45.4142" stroke="#151515" stroke-width="4"/>
+<line x1="61.4142" y1="2.41421" x2="4.41421" y2="59.4142" stroke="#151515" stroke-width="4"/>
+<line x1="69.4142" y1="10.4142" x2="13.4142" y2="66.4142" stroke="#151515" stroke-width="4"/>
+<line x1="77.4142" y1="18.4142" x2="21.4142" y2="74.4142" stroke="#151515" stroke-width="4"/>
+<line x1="85.4142" y1="26.4142" x2="29.4142" y2="82.4142" stroke="#151515" stroke-width="4"/>
+<line x1="14.4142" y1="1.58579" x2="22.4142" y2="9.58579" stroke="#151515" stroke-width="4"/>
+<line x1="15.4142" y1="17.5858" x2="23.4142" y2="25.5858" stroke="#151515" stroke-width="4"/>
+<line x1="31.4142" y1="16.5858" x2="39.4142" y2="24.5858" stroke="#151515" stroke-width="4"/>
+<line x1="30.4142" y1="32.5858" x2="38.4142" y2="40.5858" stroke="#151515" stroke-width="4"/>
+<line x1="46.4142" y1="33.5858" x2="54.4142" y2="41.5858" stroke="#151515" stroke-width="4"/>
+<line x1="46.4142" y1="49.5858" x2="54.4142" y2="57.5858" stroke="#151515" stroke-width="4"/>
+</g>
+<rect x="2" y="2" width="60" height="60" rx="6" stroke="#151515" stroke-width="4"/>
+<defs>
+<clipPath id="clip0_138_44">
+<rect width="64" height="64" rx="8" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -17,7 +17,6 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: rgb(148, 148, 148);
 }
 
 /* CAROUSEL */
@@ -97,7 +96,8 @@ html, body {
   z-index: 9;
 }
 
-#carousel ul li div a {
+#carousel ul li div a,
+.service-tile a {
   color: white;
   display: inline-block;
   background-color: var(--book-button-color);
@@ -175,4 +175,110 @@ html, body {
 
 #carousel ul li:nth-child(3) {
   background-image: url(./media/hero/50Off.png);
+}
+
+/* SERVICES PAGE */
+section#services {
+  width: 100%;
+}
+
+#services-gallery {
+  width: 100vw;
+  padding: 0 10%;
+  margin: 4% 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+h1.services-title {
+  width: 100%;
+  margin-top: 3%;
+  font-family: var(--inter-font-family);
+  font-size: 3.5vw;
+  text-align: center;
+}
+
+h2#services-description {
+  width: 100%;
+  margin-top: 3%;
+  font-family: var(--inter-font-family);
+  font-size: 2.5vw;
+  text-align: center;
+  line-height: 1.24;
+  font-weight: 400;
+}
+
+.service-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--inter-font-family);
+  margin-bottom: 3%;
+}
+
+.service-tile img {
+  max-width: 250px;
+  width: 20vw;
+}
+
+.service-name {
+  font-size: 2.5vw;
+  font-weight: 600;
+  line-height: 1.24;
+  margin-top: 1.3%;
+  margin-bottom: 0.7%;
+}
+
+.divider {
+  width: 72px;
+  height: 2px;
+  background-color: var(--header-hover-border);
+  margin-bottom: 1%;
+}
+
+.service-learn-more {
+  font-size: 20px;
+  line-height: 1.24;
+  font-weight: 400;
+  margin-bottom: 1%;
+}
+
+#service-advantages {
+  margin: 4% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.advantage-tile {
+  width: 312px;
+  height: 168px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  border: 1px solid var(--header-hover-border);
+  border-radius: 16px;
+  font-family: var(--inter-font-family);
+  margin: 2% 3%;
+}
+
+.advantage-tile img {
+  margin-right: 15%;
+}
+
+.advantage-tile p {
+  font-size: 1.1vw;
+}
+
+@media screen and (max-width: 744px) {
+  /* SERVICES */
+  h1.services-title {
+    font-size: 5vw;
+  }
+
+  .service-learn-more {
+    font-size: 16px;
+  }
 }

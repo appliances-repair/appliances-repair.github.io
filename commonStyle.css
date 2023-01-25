@@ -13,7 +13,7 @@ header {
   width: 100vw;
   height: 88px;
   background: var(--header-color);
-  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, .4);
+  box-shadow: 0px 6px 70px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   font-family: var(--inter-font-family);
