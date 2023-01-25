@@ -54,7 +54,7 @@ header {
   width: 100%;
   height: 0vh;
 
-  transition: height .0s ease-out .4s, opacity .2s ease-out .2s, padding-left .2s ease-in 0s;
+  transition: height .0s ease-out .4s, opacity .2s ease-out .2s, top .2s ease-in 0s;
   opacity: 0;
 
   display: flex;
@@ -64,8 +64,7 @@ header {
 
   overflow: hidden;
   background-color: rgb(240, 240, 240);
-
-  padding-left: 100%;
+  top: -100%
 }
 
 .nav-item {
@@ -90,13 +89,6 @@ header {
 /* Fills background of nav and is linked to the checkbox toggle */
 .nav-revert {
   position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0);
-  z-index: 1;
 }
 
 /* Checkbox used for toggle */
@@ -105,10 +97,10 @@ header {
 }
 
 #nav-tog:checked~.main-nav {
-  transition: height .0s ease-in 0s, opacity .2s ease-in 0s, padding-left .23s ease-out .21s;
+  transition: height .0s ease-in 0s, opacity .2s ease-in 0s, top .23s ease-out .21s;
   opacity: 1;
   height: 100vh;
-  padding-left: 0%;
+  top: 0%;
 }
 
 /* ============================
@@ -125,7 +117,7 @@ header {
   .main-nav {
     height: auto;
     position: relative;
-    padding-left: 0%;
+    top: 0%;
     flex-direction: row;
     justify-content: flex-end;
     opacity: 1;
@@ -139,8 +131,6 @@ header {
   .nav-item {
     font-size: 18px;
     margin: 0 5px;
-    /* color: rgb(250, 250, 250); */
     width: auto;
   }
-
 }
