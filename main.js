@@ -1,11 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const navItems = document.getElementById("nav-items");
-  const navToggle = document.getElementById("nav-toggle");
-
-  navToggle.addEventListener("click", () =>
-    navItems.classList.toggle("collapsed")
-  );
-
   const carousels = document.querySelectorAll("#carousel");
   carousels.forEach(function (carousel) {
     const ele = carousel.querySelector("ul");
@@ -150,3 +143,8 @@ function debounce(fn) {
     });
   };
 }
+
+const navItems = document.getElementById("nav-items");
+const navToggle = document.getElementById("nav-toggle");
+
+navToggle.addEventListener("click", () => navItems.classList.toggle("active"));
