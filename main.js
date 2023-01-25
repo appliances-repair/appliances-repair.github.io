@@ -143,3 +143,21 @@ function debounce(fn) {
     });
   };
 }
+
+const learnMoreButtons = document.querySelectorAll(".modal-toggle");
+const modalMask = document.querySelector(".mask");
+const closeModalBtn = document.querySelector(".close-modal");
+function toggleModal() {
+  modalMask.classList.toggle("active");
+}
+
+for (let i = 0; i < learnMoreButtons.length; i += 1) {
+  learnMoreButtons[i].addEventListener("click", toggleModal);
+}
+
+modalMask.addEventListener("click", toggleModal);
+closeModalBtn.addEventListener("click", toggleModal);
+document.addEventListener(
+  "keydown",
+  (event) => event.key === "Escape" && toggleModal()
+);
