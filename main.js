@@ -143,8 +143,3 @@ function debounce(fn) {
     });
   };
 }
-
-const navItems = document.getElementById("nav-items");
-const navToggle = document.getElementById("nav-toggle");
-
-navToggle.addEventListener("click", () => navItems.classList.toggle("active"));
