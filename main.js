@@ -147,17 +147,22 @@ function debounce(fn) {
 const learnMoreButtons = document.querySelectorAll(".modal-toggle");
 const modalMask = document.querySelector(".mask");
 const closeModalBtn = document.querySelector(".close-modal");
-function toggleModal() {
-  modalMask.classList.toggle("active");
+
+function showModal() {
+  modalMask.classList.add("active");
+}
+
+function closeModal() {
+  modalMask.classList.remove("active");
 }
 
 for (let i = 0; i < learnMoreButtons.length; i += 1) {
-  learnMoreButtons[i].addEventListener("click", toggleModal);
+  learnMoreButtons[i].addEventListener("click", showModal);
 }
 
-modalMask.addEventListener("click", toggleModal);
-closeModalBtn.addEventListener("click", toggleModal);
+modalMask.addEventListener("click", closeModal);
+closeModalBtn.addEventListener("click", closeModal);
 document.addEventListener(
   "keydown",
-  (event) => event.key === "Escape" && toggleModal()
+  (event) => event.key === "Escape" && closeModal()
 );
