@@ -150,10 +150,12 @@ const closeModalBtn = document.querySelector(".close-modal");
 
 function showModal() {
   modalMask.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
 function closeModal() {
   modalMask.classList.remove("active");
+  document.body.removeAttribute("style");
 }
 
 for (let i = 0; i < learnMoreButtons.length; i += 1) {
