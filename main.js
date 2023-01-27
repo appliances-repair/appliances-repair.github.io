@@ -215,8 +215,8 @@ for (let i = 0; i < learnMoreButtons.length; i += 1) {
   );
 }
 
-modalMask.addEventListener("click", closeModal);
-closeModalBtn.addEventListener("click", closeModal);
+modalMask && modalMask.addEventListener("click", closeModal);
+closeModalBtn && closeModalBtn.addEventListener("click", closeModal);
 document.addEventListener(
   "keydown",
   (event) => event.key === "Escape" && closeModal()

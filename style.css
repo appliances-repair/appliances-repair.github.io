@@ -124,7 +124,7 @@ html, body {
 
 #carousel ol {
   position: absolute;
-  bottom: 72px;
+  bottom: 7vh;
   display: flex;
   justify-content: center;
   left: 50%;
@@ -382,6 +382,10 @@ h2#services-description {
 }
 
 @media screen and (max-width: 744px) {
+  #carousel h1 {
+    font-size: 7vw;
+  }
+
   /* SERVICES */
   h1.services-title {
     font-size: max(24px, 5vw);
@@ -438,6 +442,16 @@ h2#services-description {
     width: 40px;
     margin: 10%;
     margin-left: 5%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #carousel h3 {
+    font-size: 3.4vw;
+  }
+
+  #carousel ol li p {
+    font-size: 10px;
   }
 }
 
