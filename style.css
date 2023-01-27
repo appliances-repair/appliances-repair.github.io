@@ -96,7 +96,7 @@ html, body {
 }
 
 #carousel ul li div {
-  z-index: 9;
+  z-index: 2;
 }
 
 .primary-btn,
