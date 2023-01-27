@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.24;
 }
 
 html, body {
@@ -265,16 +266,17 @@ h2#services-description {
 }
 
 .advantage-tile {
-  width: 312px;
-  height: 168px;
+  width: 18vw;
+  min-width: 312px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2%;
+  padding-left: 2%;
   border: 1px solid var(--header-hover-border);
   border-radius: 16px;
   font-family: var(--inter-font-family);
-  margin: 2% 3%;
+  margin: 1.5vw 2vw;
 }
 
 .advantage-tile img {
@@ -282,7 +284,7 @@ h2#services-description {
 }
 
 .advantage-tile p {
-  font-size: 1.1vw;
+  font-size: max(20px, 1.1vw);
 }
 
 /* MODAL */
@@ -426,6 +428,17 @@ h2#services-description {
   #modal-buttons .secondary-btn {
     margin-right: 5px;
   }
+
+  .advantage-tile {
+    padding: 2%;
+    height: 112px;
+  }
+
+  .advantage-tile img {
+    width: 40px;
+    margin: 10%;
+    margin-left: 5%;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -443,5 +456,15 @@ h2#services-description {
 
   .service-name {
     font-size: 3.5vw;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .advantage-tile {
+    min-width: 70vw;
+  }
+
+  .advantage-tile p {
+    font-size: 15px;
   }
 }
