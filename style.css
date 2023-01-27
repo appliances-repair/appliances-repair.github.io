@@ -211,7 +211,7 @@ h2#services-description {
   width: 100%;
   margin-top: 3%;
   font-family: var(--inter-font-family);
-  font-size: 1.5vw;
+  font-size: max(15px, 1.5vw);
   text-align: center;
   line-height: 1.24;
   font-weight: 400;
@@ -286,6 +286,12 @@ h2#services-description {
 }
 
 /* MODAL */
+
+#modal .primary-btn,
+#modal .secondary-btn {
+  font-size: max(15px, 1.2vw);
+}
+
 #modal-heading {
   width: 100%;
   display: flex;
@@ -295,7 +301,7 @@ h2#services-description {
 }
 
 #modal-title {
-  font-size: 2vw;
+  font-size: max(20px, 2vw);
   font-weight: 400;
 }
 
@@ -308,8 +314,10 @@ h2#services-description {
 #modal-description {
   width: 90%;
   margin-top: 40px;
-  font-size: 24px;
+  font-size: max(15px, 1.2vw);
   line-height: 1.4;
+  max-height: 50vh;
+  overflow-y: scroll;
 }
 
 #modal-buttons {
@@ -347,12 +355,12 @@ h2#services-description {
 .modal {
   width: 50vw;
   background: #FBFBFB;
-  z-index: 100;
+  z-index: 999;
   visibility: hidden;
   opacity: 0;
   transition: 0.3s ease-out;
   transform: translateY(45px);
-  padding: 2%;
+  padding: 2vw 3.7vw;
   font-family: var(--inter-font-family);
   border-radius: 24px;
 }
@@ -374,7 +382,11 @@ h2#services-description {
 @media screen and (max-width: 744px) {
   /* SERVICES */
   h1.services-title {
-    font-size: 5vw;
+    font-size: max(24px, 5vw);
+  }
+
+  h2#services-description {
+    padding: 0 4vw;
   }
 
   .service-learn-more {
@@ -386,5 +398,50 @@ h2#services-description {
     padding: 8px 23%;
     font-size: 2.5vw;
     white-space: nowrap;
+  }
+
+  .modal {
+    border-radius: 3vw;
+    width: 87vw;
+    padding: 5vw;
+  }
+
+  .close-modal {
+    width: 3.2vw;
+    height: 3.2vw;
+  }
+
+  #modal-buttons .primary-btn,
+  #modal-buttons .secondary-btn {
+    font-size: max(10px, 1.2vw);
+    padding: 8px 10%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  #modal-buttons .primary-btn {
+    margin-left: 5px;
+  }
+
+  #modal-buttons .secondary-btn {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #services-gallery {
+    width: 100vw;
+    padding: 0 5%;
+    margin: 4% 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-tile img {
+    width: 33vw;
+  }
+
+  .service-name {
+    font-size: 3.5vw;
   }
 }
