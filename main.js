@@ -204,9 +204,11 @@ function showModal(serviceId) {
 }
 
 function closeModal() {
+  setTimeout(() => {
+    modalTitle.textContent = "";
+    modalDesc.textContent = "";
+  }, 400);
   modalMask.classList.remove("active");
-  modalTitle.textContent = "";
-  modalDesc.textContent = "";
 }
 
 for (let i = 0; i < learnMoreButtons.length; i += 1) {
