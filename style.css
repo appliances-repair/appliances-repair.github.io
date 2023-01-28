@@ -382,6 +382,15 @@ h2#services-description {
 }
 
 @media screen and (max-width: 744px) {
+  #hero, #carousel {
+    height: calc(100vh - 64px);
+  }
+
+  #carousel ul {
+    height: calc(100vh - 64px);
+    max-height: calc(100vh - 64px);
+  }
+
   #carousel h1 {
     font-size: 7vw;
   }
@@ -436,12 +445,18 @@ h2#services-description {
   .advantage-tile {
     padding: 2%;
     height: 112px;
+    width: 40vw;
+    min-width: 200px;
   }
 
   .advantage-tile img {
     width: 40px;
     margin: 10%;
     margin-left: 5%;
+  }
+
+  .advantage-tile p {
+    font-size: max(15px, 1.5vw);
   }
 }
 
@@ -452,6 +467,17 @@ h2#services-description {
 
   #carousel ol li p {
     font-size: 10px;
+  }
+
+  .advantage-tile {
+    width: 90vw;
+    height: 90px;
+    justify-content: flex-start;
+  }
+
+  .advantage-tile img {
+    width: 40px;
+    margin: 0 20px 0 20px;
   }
 }
 
@@ -473,12 +499,8 @@ h2#services-description {
   }
 }
 
-@media screen and (max-width: 350px) {
+/* @media screen and (max-width: 350px) {
   .advantage-tile {
     min-width: 70vw;
   }
-
-  .advantage-tile p {
-    font-size: 15px;
-  }
-}
+} */
