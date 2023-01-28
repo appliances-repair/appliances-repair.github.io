@@ -101,6 +101,38 @@ a.nav-item {
   overflow-y: scroll;
 }
 
+.primary-btn,
+.secondary-btn {
+  color: white;
+  display: inline-block;
+  background-color: var(--book-button-color);
+  text-shadow: none;
+  font-weight: 400;
+  color: var(--book-button-text-color);
+  padding: 12px 12%;
+  font-family: var(--inter-font-family);
+  font-size: 1.5vw;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 10px 20px 0 20px;
+  transition: 0.3s;
+}
+
+.secondary-btn {
+  color: var(--header-text-color);
+  background-color: var(--book-button-text-color);
+  border: 1px solid #151515;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #EE2B2B;
+}
+
+.primary-btn:active {
+  background-color: #E02828;
+}
+
 /* ============================
     Large screen nav
 ============================= */
