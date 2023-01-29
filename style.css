@@ -25,7 +25,7 @@ html, body {
 /* CAROUSEL */
 #hero, #carousel {
   height: 50vh;
-  min-height: 350px;
+  min-height: 400px;
   overflow: hidden;
 }
 
@@ -64,7 +64,7 @@ html, body {
   overflow: auto;
   display: flex;
   height: 50vh;
-  min-height: 350px;
+  min-height: 400px;
   scroll-snap-type: x mandatory;
   scroll-snap-points-y: repeat(100%);
   scroll-behavior: smooth;
@@ -481,7 +481,7 @@ h2.border-bottom-text {
 @media screen and (max-width: 744px) {
   #hero, #carousel, #carousel ul {
     height: 30vh;
-    min-height: 350px;
+    min-height: 400px;
   }
 
   #carousel h1 {
