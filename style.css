@@ -13,6 +13,7 @@
   padding: 0;
   box-sizing: border-box;
   line-height: 1.24;
+  font-family: var(--inter-font-family);
 }
 
 html, body {
@@ -436,6 +437,45 @@ h2.border-bottom-text {
   height: 24px;
 }
 
+#coupon-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5% 5% 5%;
+}
+
+#coupon-section h2,
+#coupon-section h3 {
+  font-size: 3.5vw;
+  color: #FF5252;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#coupon-section h3 {
+  font-size: 2vw;
+}
+
+#coupon {
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #FF5252;
+  padding: 2% 5%;
+  border-radius: 16px;
+}
+
+#coupon p {
+  color: #BEBEBE;
+  margin-top: 20px;
+  text-align: center;
+}
+
 
 
 @media screen and (max-width: 744px) {
@@ -547,6 +587,26 @@ h2.border-bottom-text {
   .about-services-tile {
     padding: 2vw 3.5vw;
     margin: 2vw 0;
+  }
+  
+  #coupon-section {
+    flex-direction: column;
+  }
+
+  #coupon {
+    min-width: 100%;
+  }
+
+  #limited-offer {
+    display: none;
+  }
+
+  #coupon-section h2 {
+    font-size: max(24px, 5vw);
+  }
+
+  #coupon-section h3 {
+    font-size: max(20px, 3vw);
   }
 }
 
