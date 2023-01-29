@@ -22,8 +22,13 @@ html, body {
   overflow-x: hidden;
 }
 
+section {
+  padding: 0 5% 5% 5%;
+}
+
 /* CAROUSEL */
 #hero, #carousel {
+  padding: 0;
   height: 50vh;
   min-height: 400px;
   overflow: hidden;
@@ -172,8 +177,7 @@ section#services {
 }
 
 #services-gallery {
-  width: 100vw;
-  padding: 0 5%;
+  width: 100%;
   margin: 4% 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -367,10 +371,6 @@ h2.page-description {
 }
 
 /* ABOUT */
-#about {
-  padding: 0 5% 5% 5%;
-}
-
 h2.border-bottom-text {
   border-bottom: 1px solid #FF5252;
 }
@@ -442,7 +442,6 @@ h2.border-bottom-text {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5% 5% 5%;
 }
 
 #coupon-section h2,
@@ -474,6 +473,14 @@ h2.border-bottom-text {
   color: #BEBEBE;
   margin-top: 20px;
   text-align: center;
+}
+
+/* OUR TEAM */
+
+#team-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
 }
 
 
@@ -550,7 +557,7 @@ h2.border-bottom-text {
   }
 
   /* ABOUT */
-  #about {
+  section {
     padding: 0 5% 10% 5%;
   }
 
@@ -655,8 +662,6 @@ h2.border-bottom-text {
 
 @media screen and (max-width: 400px) {
   #services-gallery {
-    width: 100vw;
-    padding: 0 5%;
     margin: 4% 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
