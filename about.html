@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=M+PLUS+1:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./commonStyle.css">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./main.js"></script>
+  <title>About us</title>
+</head>
+
+<body>
+  <header class='main-header'>
+    <div class="menu-wrap">
+      <!-- Logo container -->
+      <a href='./index.html' target='_blank' class="logo-wrap">
+        <h1 class="logo">Logo</h1>
+      </a>
+
+      <!-- When this is checked, nav menu is dropped -->
+      <input type='checkbox' id='nav-tog'>
+
+      <!-- Hamburger btn -->
+      <label for='nav-tog' class="drop-trigger">
+        <img src="./media/nav.svg" alt="" srcset="">
+      </label>
+
+      <!-- Menu -->
+      <nav class="main-nav">
+        <!-- Menu items -->
+        <a href='./index.html' class="nav-item">
+          <span>Home</span>
+        </a>
+        <a href='./services.html' class="nav-item">
+          <span>Services</span>
+        </a>
+        <a href='#contact' class="nav-item">
+          <span>Brands</span>
+        </a>
+        <a href='./about.html' class="nav-item">
+          <span>About</span>
+        </a>
+        <a href='#' class="nav-item">
+          <span>Locations</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+  <section id="about">
+    <h1 class="page-title">Welcome to</h1>
+    <h1 id="welcome-name" class="page-title">Master Appliance</h1>
+    <h2 class="page-description">Hello and thank you for choosing us!</br>
+      We'll try our best to give you the best quality of service.
+    </h2>
+    <div id="about-text-content">
+      <div id="about-text">
+        <h2 class="page-description border-bottom-text">We have <span id="year-insert">10 years</span> of experience in
+          home appliance repair
+        </h2>
+        <h2 class="page-description">We serve all major appliance types and brands and are prepared for all kinds of
+          issues. Our technicians are trained and
+          experienced. We use the best equipment accurate diagnostic and quick repair. Our team is happy to serve our
+          neighborsin the Bay Area.
+        </h2>
+      </div>
+      <div id="logo-content">
+        <img src="./media/about/logo.svg" alt="" id="about-logo" />
+
+        <div id="about-services">
+          <ul>
+            <li class="about-services-tile"><img src="./media/about/onTime.svg" alt="">
+              <p>On time at services</p>
+            </li>
+            <li class="about-services-tile"><img src="./media/about/services.svg" alt="">
+              <p>24/7 services</p>
+            </li>
+            <li class="about-services-tile"><img src="./media/about/professionals.svg" alt="">
+              <p>Verified professionals</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="mask" role="dialog">
+    <div class="modal" role="alert">
+      <div id="modal-heading">
+        <h4 id="modal-title">Ovens / Microwaves Repair Service</h4>
+        <img src="./media/services/close.svg" alt="" srcset="" class="close-modal" role="button">
+      </div>
+      <div id="modal-divider"></div>
+      <p id="modal-description">Garbage disposal is a useful machine preventing your home from garbage stuff. This
+        stainless-steel or plastic unit is
+        designed to grind food waste and prevent tubes clog. But like any other home appliance, your garbage disposal
+        needs
+        proper handling and repair in case of breakdown. In case of an issue, it is better to contact a professional
+        service as
+        soon as possible and schedule a same-day appointment.</p>
+      <div id="modal-buttons">
+        <span class="secondary-btn" role="button">Cancel</span>
+        <a class="primary-btn" href="https://www.google.com" role="button" target="_blank">Book now</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
