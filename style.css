@@ -480,9 +480,42 @@ h2.border-bottom-text {
 #team-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-
+  padding: 5% 0 10% 0;
 }
 
+.team-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+.team-photo {
+  width: 304px;
+  border: 1px solid #FF5252;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.team-tile h3 {
+  font-size: 2vw;
+  margin-top: 1vw;
+  font-weight: 600;
+}
+
+.team-tile .role {
+  line-height: 2.7;
+  font-size: max(20px, 1vw);
+  border-bottom: 1px solid #FF5252;
+}
+
+.team-tile a {
+  line-height: 2.7;
+  font-size: max(20px, 1vw);
+  color: black;
+}
 
 
 @media screen and (max-width: 744px) {
