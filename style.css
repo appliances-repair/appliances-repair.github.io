@@ -540,23 +540,28 @@ h2.border-bottom-text {
 }
 
 .review-tile {
-  width: 300px;
-  min-width: 300px;
-  max-width: 300px;
+  width: 350px;
+  min-width: 200px;
+  max-height: 450px;
   flex: 1;
   border: 1px solid #FF5252;
   border-radius: 16px;
   padding: 20px;
-  margin:20px;
+  margin: 20px;
 }
 
 .review-tile .customer-name {
-  font-size: max(20px, 1vw);
+  font-size: max(16px, 1vw);
   margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .review-tile .review-text {
-  font-size: max(15px, 0.8vw);
+  font-size: max(12px, 0.8vw);
+  max-height: 70%;
+  overflow: auto;
 }
 
 .stars-container {
