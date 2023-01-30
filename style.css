@@ -501,21 +501,52 @@ h2.border-bottom-text {
 }
 
 .team-tile h3 {
-  font-size: 2vw;
+  font-size: max(24px, 2vw);
   margin-top: 1vw;
   font-weight: 600;
 }
 
 .team-tile .role {
   line-height: 2.7;
-  font-size: max(20px, 1vw);
+  font-size: max(14px, 1vw);
   border-bottom: 1px solid #FF5252;
 }
 
 .team-tile a {
   line-height: 2.7;
-  font-size: max(20px, 1vw);
+  font-size: max(16px, 1vw);
   color: black;
+}
+
+@media screen and (max-width: 1400px) {
+  #team-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  #team-gallery {
+    display: flex;
+    max-width: 100%;
+    overflow: scroll;
+  }
+
+  .team-tile {
+    margin: 0 10px;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  #team-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  #team-gallery {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
 }
 
 
@@ -648,6 +679,17 @@ h2.border-bottom-text {
 
   #coupon-section h3 {
     font-size: max(20px, 3vw);
+  }
+
+  .team-photo {
+    max-width: 35vw;
+  }
+
+  .team-photo img {
+    max-width: 100%;
+    max-height: 50vw;
+    object-fit: contain;
+    object-position: bottom;
   }
 }
 
