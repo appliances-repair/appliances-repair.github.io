@@ -518,6 +518,61 @@ h2.border-bottom-text {
   color: black;
 }
 
+#customers-reviews-gallery {
+  width: 100%;
+  display: flex;
+  margin-top: 5%;
+  justify-content: space-between;
+  overflow: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#customers-reviews-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#customers-reviews-gallery {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.review-tile {
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  flex: 1;
+  border: 1px solid #FF5252;
+  border-radius: 16px;
+  padding: 20px;
+  margin:20px;
+}
+
+.review-tile .customer-name {
+  font-size: max(20px, 1vw);
+  margin-bottom: 20px;
+}
+
+.review-tile .review-text {
+  font-size: max(15px, 0.8vw);
+}
+
+.stars-container {
+  margin-bottom: 20px;
+}
+
+.stars-container svg {
+  transition: 0.25s ease;
+  fill: #F8BD25;
+}
+
+/* .stars-container svg.selected {
+  fill: #F8BD25;
+  filter: drop-shadow(0 0 3px #666);
+} */
+
 @media screen and (max-width: 1400px) {
   #team-gallery {
     grid-template-columns: 1fr 1fr 1fr;
