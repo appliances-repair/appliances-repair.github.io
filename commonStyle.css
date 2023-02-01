@@ -109,7 +109,9 @@ a.nav-item {
   text-shadow: none;
   font-weight: 400;
   color: var(--book-button-text-color);
-  padding: 12px 12%;
+  width: 15vw;
+  text-align: center;
+  padding: 12px 0;
   font-family: var(--inter-font-family);
   font-size: 1.5vw;
   text-decoration: none;
