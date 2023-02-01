@@ -334,7 +334,7 @@ h2.page-description {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.65);
-  z-index: 50;
+  z-index: 5;
   visibility: hidden;
   opacity: 0;
   transition: 0.3s;
@@ -692,7 +692,6 @@ h2.border-bottom-text {
   #modal-buttons .primary-btn,
   #modal-buttons .secondary-btn {
     font-size: max(10px, 1.2vw);
-    padding: 8px 10%;
     margin-top: 10px;
     margin-bottom: 5px;
   }
@@ -860,6 +859,11 @@ h2.border-bottom-text {
 
   .service-name {
     font-size: 3.5vw;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 30vw;
   }
 }
 

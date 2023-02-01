@@ -226,7 +226,9 @@ function showModal(itemId, type) {
 function closeModal() {
   setTimeout(() => {
     modalTitle.textContent = "";
-    modalDesc.textContent = "";
+    if (modalDesc) {
+      modalDesc.textContent = "";
+    }
   }, 400);
   modalMask.classList.remove("active");
 }
@@ -237,7 +239,7 @@ for (let i = 0; i < learnMoreButtons.length; i += 1) {
   );
 }
 
-modalMask && modalMask.addEventListener("click", closeModal);
+// modalMask && modalMask.addEventListener("click", closeModal);
 closeModalBtn && closeModalBtn.addEventListener("click", closeModal);
 document.addEventListener(
   "keydown",
