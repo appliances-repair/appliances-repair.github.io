@@ -191,15 +191,35 @@ const servicesData = {
   },
 };
 
+const teamNames = {
+  teamMember1: "Denis",
+  teamMember2: "George",
+  teamMember3: "Nick",
+  teamMember4: "Will",
+  teamMember5: "Jake",
+  teamMember6: "Eli",
+  teamMember7: "Anthony",
+  teamMember8: "Adam",
+};
+
 const learnMoreButtons = document.querySelectorAll(".modal-toggle");
 const modalMask = document.querySelector(".mask");
 const closeModalBtn = document.querySelector(".close-modal");
 const modalTitle = document.getElementById("modal-title");
 const modalDesc = document.getElementById("modal-description");
+const teamsReviewButtons = document.querySelectorAll(".leave-review");
 
-function showModal(serviceId) {
-  modalTitle.textContent = servicesData[serviceId].title;
-  modalDesc.textContent = servicesData[serviceId].description;
+function showModal(itemId, type) {
+  if (type === "service") {
+    modalTitle.textContent = servicesData[itemId].title;
+    modalDesc.textContent = servicesData[itemId].description;
+  } else {
+    if (teamNames[itemId]) {
+      modalTitle.textContent = `Leave your review to ${teamNames[itemId]}`;
+    } else {
+      modalTitle.textContent = "Leave your review";
+    }
+  }
   modalMask.classList.add("active");
 }
 
@@ -213,7 +233,7 @@ function closeModal() {
 
 for (let i = 0; i < learnMoreButtons.length; i += 1) {
   learnMoreButtons[i].addEventListener("click", (event) =>
-    showModal(event.target.id)
+    showModal(event.target.id, "service")
   );
 }
 
@@ -224,24 +244,32 @@ document.addEventListener(
   (event) => event.key === "Escape" && closeModal()
 );
 
-// let stars = Array.from(document.querySelectorAll(".stars-container i"));
+let stars = Array.from(document.querySelectorAll(".review-stars svg"));
 
-// stars.forEach((element) => {
-//   element.addEventListener("click", (e) => {
-//     rate(element);
-//   });
-//   /********** */
-//   element.addEventListener("mouseover", (e) => {
-//     rate(element);
-//   });
-// });
+stars.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    rate(element);
+  });
 
-// function rate(element) {
-//   stars.forEach((el) => {
-//     el.classList.remove("selected");
-//   });
-//   selectedRating = stars.indexOf(element);
-//   for (let i = 0; i <= selectedRating; i++) {
-//     stars[i].classList.add("selected");
-//   }
-// }
+  /********** */
+  element.addEventListener("mouseover", (e) => {
+    rate(element);
+  });
+});
+
+function rate(element) {
+  stars.forEach((el) => {
+    el.classList.remove("selected");
+  });
+  selectedRating = stars.indexOf(element);
+  for (let i = 0; i <= selectedRating; i++) {
+    stars[i].classList.add("selected");
+  }
+}
+
+for (let i = 0; i < teamsReviewButtons.length; i += 1) {
+  teamsReviewButtons[i].addEventListener("click", (event) => {
+    event.preventDefault();
+    return showModal(event.target.id);
+  });
+}

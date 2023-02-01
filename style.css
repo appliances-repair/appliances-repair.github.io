@@ -512,10 +512,11 @@ h2.border-bottom-text {
   border-bottom: 1px solid #FF5252;
 }
 
-.team-tile a {
+.team-tile .leave-review {
   line-height: 2.7;
   font-size: max(16px, 1vw);
   color: black;
+  cursor: pointer;
 }
 
 #reviews {
@@ -584,10 +585,39 @@ h2.border-bottom-text {
   fill: #F8BD25;
 }
 
-/* .stars-container svg.selected {
+.review-stars {
+  width: 100%;
+  margin: 3.5vw 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-stars svg {
+  fill: #BEBEBE;
+}
+
+.review-stars .selected {
   fill: #F8BD25;
-  filter: drop-shadow(0 0 3px #666);
-} */
+}
+
+.name-input, .review-input {
+  border: 1px solid #FF5252;
+  border-radius: 16px;
+  padding: 16px;
+  font-family: var(--inter-font-family);
+  font-size: max(1.2vw, 16px);
+}
+
+.name-input {
+  width: 50%;
+}
+
+.review-input {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+}
 
 @media screen and (max-width: 1400px) {
   #team-gallery {
@@ -619,7 +649,6 @@ h2.border-bottom-text {
     /* Firefox */
   }
 }
-
 
 @media screen and (max-width: 744px) {
   #hero, #carousel, #carousel ul {
