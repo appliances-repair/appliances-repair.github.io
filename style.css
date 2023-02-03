@@ -199,7 +199,7 @@ h1.page-title {
 
 h2.page-description {
   width: 100%;
-  margin-top: 3%;
+  margin-top: max(3%, 20px);
   font-family: var(--inter-font-family);
   font-size: max(15px, 1.5vw);
   text-align: center;
