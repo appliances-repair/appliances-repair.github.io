@@ -922,6 +922,10 @@ h3.brand-letter {
     display: block;
   }
 
+  #brands-alphabet {
+    position: relative;
+  }
+
   .brand-block {
     position: absolute;
     display: none;
