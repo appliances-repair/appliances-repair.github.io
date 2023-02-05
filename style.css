@@ -619,6 +619,120 @@ h2.border-bottom-text {
   margin-top: 20px;
 }
 
+/* BRANDS */
+
+#brands {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3#popular-brands,
+h3.brand-letter {
+  font-size: 2vw;
+  font-weight: 600;
+}
+
+h3#popular-brands {
+  text-align: center;
+  margin: 4vw 0 2vw 0;
+}
+
+h3.brand-letter {
+  margin-bottom: 24px;
+}
+
+.brands-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.brand-logo {
+  width: calc(100% / 12);
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.brand-logo img {
+  width: 100%;
+  object-fit: contain;
+}
+
+#alphabet-selector {
+  width: fit-content;
+  margin-top: 5vw;
+  border: 1px solid #FF5252;
+  border-radius: 8px;
+  display: none;
+}
+
+.letters-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.letters-row .letter {
+  margin: 2vw;
+  cursor: pointer;
+}
+
+.letter.empty {
+  color: #BEBEBE;
+  cursor: not-allowed;
+}
+
+#brands-alphabet {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 5vw;
+}
+
+.brand-block {
+  margin-bottom: 2.5vw;
+  padding-bottom: 2.5vw;
+  border-bottom: 1px solid #FF5252;
+}
+
+.brand-block:nth-last-child(4),
+.brand-block:nth-last-child(3),
+.brand-block:nth-last-child(2),
+.brand-block:nth-last-child(1) {
+  border: none;
+}
+
+.brand-block p {
+  font-size: max(1.3vw, 16px);
+  line-height: 1.24;
+}
+
+@media screen and (max-width: 1200px){
+  h3#popular-brands,
+  h3.brand-letter {
+    font-size: max(3.5vw, 16px);
+  }
+
+  #brands-gallery {
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow: auto;
+  }
+
+  .brand-logo {
+    width: calc(100% / 5);
+    min-width:calc(100% / 5);
+    margin-right: 30px;
+  }
+  
+}
+
+
 @media screen and (max-width: 1400px) {
   #team-gallery {
     grid-template-columns: 1fr 1fr 1fr;
@@ -801,6 +915,18 @@ h2.border-bottom-text {
     margin-left: 10px;
     margin-right: 10px;  
   }
+
+  /* MOBILE HERE */
+
+  #alphabet-selector {
+    display: block;
+  }
+
+  .brand-block {
+    position: absolute;
+    display: none;
+    border: none;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -864,6 +990,12 @@ h2.border-bottom-text {
   .primary-btn,
   .secondary-btn {
     width: 30vw;
+  }
+
+  .brand-logo {
+    height: 64px;
+    margin-right: 15px;
+    margin-bottom: 15px;
   }
 }
 

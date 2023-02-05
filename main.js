@@ -202,6 +202,25 @@ const teamNames = {
   teamMember8: "Adam",
 };
 
+const brandNames = {
+  A: ["AGA", "ALFRESCO", "AMERICAN RANGE", "ASKO"],
+  B: ["BERTAZZONI", "BLOMBERG", "BLUESTAR", "BOSCH"],
+  C: ["CAFE", "CAPITAL", "COVE", "COYOTE"],
+  D: ["DACOR", "DCS"],
+  E: ["ELECTROLUX", "ELICA"],
+  F: ["FISHER & PAYKEL", "FRIGIDAIRE"],
+  G: ["GAGGENAU"],
+  L: ["LA CORNUE", "LG", "LIEBHERR", "LINX"],
+  M: ["MARVEL", "MAYTAG", "MIELE", "MONOGRAM"],
+  P: ["PERLICK"],
+  R: ["RCS"],
+  S: ["SAMSUNG", "SIGNATURE", "SMEG", "SPEED QUEEN", "SUB-ZERO", "SUPERIORE"],
+  T: ["THOR", "THERMADOR"],
+  V: ["VENTAHOOD", "VERONA", "VIKING"],
+  W: ["WHIRLPOOL", "WOLF"],
+  Z: ["ZEPHYR", "ZLINE"],
+};
+
 const learnMoreButtons = document.querySelectorAll(".modal-toggle");
 const modalMask = document.querySelector(".mask");
 const closeModalBtn = document.querySelector(".close-modal");
@@ -275,3 +294,61 @@ for (let i = 0; i < teamsReviewButtons.length; i += 1) {
     return showModal(event.target.id);
   });
 }
+
+// BRANDS
+const brandsSection = document.getElementById("brands-alphabet");
+const letters = document.querySelectorAll(".letters-row .letter");
+function populateBrands() {
+  for (let key in brandNames) {
+    const brandsArr = brandNames[key].sort();
+
+    const brandBlock = document.createElement("div");
+    brandBlock.setAttribute("class", "brand-block");
+    brandBlock.classList.add(`brand-${key.toLowerCase()}`);
+    const brands = document.createElement("div");
+    const brandLetter = document.createElement("h3");
+    brandLetter.setAttribute("class", "brand-letter");
+    brandBlock.appendChild(brandLetter);
+    brandBlock.appendChild(brands);
+
+    brandLetter.textContent = key;
+
+    for (let i = 0; i < brandsArr.length; i += 1) {
+      const brandParagraph = document.createElement("p");
+      brandParagraph.textContent = brandsArr[i];
+      brands.appendChild(brandParagraph);
+    }
+
+    brandsSection.appendChild(brandBlock);
+  }
+}
+
+function showBrands(letterToShow) {
+  const brandBlocks = document.querySelectorAll(".brand-block");
+  for (let i = 0; i < brandBlocks.length; i += 1) {
+    if (
+      brandBlocks[i].classList.contains(`brand-${letterToShow.toLowerCase()}`)
+    ) {
+      brandBlocks[i].style.display = "block";
+    } else {
+      brandBlocks[i].style.display = "none";
+    }
+  }
+}
+
+function selectLetters() {
+  for (let i = 0; i < letters.length; i += 1) {
+    const letter = letters[i];
+
+    if (!brandNames[letter.textContent]) {
+      letter.classList.add("empty");
+    } else {
+      letter.addEventListener("click", (event) =>
+        showBrands(event.target.textContent)
+      );
+    }
+  }
+}
+
+brandsSection && populateBrands();
+letters && selectLetters();
