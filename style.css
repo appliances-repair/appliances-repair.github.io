@@ -896,7 +896,7 @@ h3.brand-letter {
   .review-tile {
     width: 312px;
     min-width: 312px;
-    height: 370px;
+    max-height: 370px;
     margin-left: 10px;
     margin-right: 10px;
   }
