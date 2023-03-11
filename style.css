@@ -258,10 +258,11 @@ h2.page-description {
   width: 18vw;
   min-width: 312px;
   height: 150px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
-  padding-left: 2%;
+  justify-items: flex-start;
+  padding: 2%;
   border: 1px solid var(--header-hover-border);
   border-radius: 16px;
   font-family: var(--inter-font-family);
@@ -805,6 +806,7 @@ h3.brand-letter {
   }
 
   .advantage-tile {
+    grid-template-columns: 1fr 4fr;
     padding: 2%;
     height: 112px;
     width: 40vw;
