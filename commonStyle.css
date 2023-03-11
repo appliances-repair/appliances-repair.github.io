@@ -6,6 +6,7 @@
   --mplus-font-family: 'M PLUS 1';
   --book-button-color: #FF5252;
   --book-button-text-color: #F7F7F7;
+  --footer-color: #BEBEBE;
 }
 
 /* NAVIGATION */
@@ -135,6 +136,39 @@ a.nav-item {
   background-color: #E02828;
 }
 
+footer {
+  display: flex;
+  height: 300px;
+  padding: 3% 5%;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: var(--footer-color);
+  font-family: var(--inter-font-family);
+}
+
+footer h5 {
+  font-weight: 400;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  margin: 0 20px;
+}
+
+footer li {
+  list-style: none;
+  margin: 5px;
+}
+
+footer li a {
+  text-decoration: none;
+  color: var(--header-text-color);
+}
+
 /* ============================
     Large screen nav
 ============================= */
@@ -170,5 +204,25 @@ a.nav-item {
 
   .nav-item:not(:first-child) {
     margin-left: 56px;
+  }
+}
+
+@media screen and (max-width: 744px) {
+  footer {
+    padding: 5%;
+    flex-direction: column;
+  }
+
+  footer .mobile-hidden {
+    display: none;
+  }
+
+  footer .primary-btn {
+    margin: 5% 0;
+    width: 25vw;
+  }
+
+  footer h5 {
+    text-align: center;
   }
 }
