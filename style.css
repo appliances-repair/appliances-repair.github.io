@@ -602,7 +602,7 @@ h2.border-bottom-text {
   fill: #F8BD25;
 }
 
-.name-input, .review-input {
+.name-input, .review-input, .zipcode-input {
   border: 1px solid #FF5252;
   border-radius: 16px;
   padding: 16px;
@@ -610,7 +610,7 @@ h2.border-bottom-text {
   font-size: max(1.2vw, 16px);
 }
 
-.name-input {
+.name-input, .zipcode-input {
   width: 50%;
 }
 
@@ -711,6 +711,35 @@ h3.brand-letter {
 .brand-block p {
   font-size: max(1.3vw, 16px);
   line-height: 1.24;
+}
+
+#map-block {
+  width: 100%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+#map-block .zipcode-option {
+  height: 40px;
+  font-family: var(--inter-font-family);
+  padding: 10px;
+  font-size: 20px;
+}
+
+#map {
+  margin-top: 5%;
+  height: 400px; /* The height is 400 pixels */
+  width: 100%; /* The width is the width of the web page */
+}
+
+#zipcode-options {
+  border: 1px solid var(--book-button-color);
+  border-radius: 16px;
+}
+
+#zipcode-options.hidden {
+  display: none;
 }
 
 @media screen and (max-width: 1400px) {

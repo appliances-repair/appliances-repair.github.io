@@ -1,3 +1,18 @@
+window.initMap = function(){
+  // The location of Uluru
+  const uluru = { lat: 37.4634, lng: -122.2257 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const carousels = document.querySelectorAll("#carousel");
   carousels.forEach(function (carousel) {
@@ -133,7 +148,7 @@ function debounce(fn) {
     // Setup the arguments
     let context = this;
     let args = arguments;
-    // If there's a timer, cancel it
+    // If there"s a timer, cancel it
     if (timeout) {
       window.cancelAnimationFrame(timeout);
     }
@@ -221,12 +236,165 @@ const brandNames = {
   Z: ["ZEPHYR", "ZLINE"],
 };
 
+const zipCodes = {
+  '94022': { lat: 37.36, lng: -122.15 },
+  '94024': { lat: 37.36, lng: -122.09 },
+  '94025': { lat: 37.46, lng: -122.18 },
+  '94026': { lat: 37.455, lng: -122.178 },
+  '94027': { lat: 37.45, lng: -122.2 },
+  '94028': { lat: 37.37, lng: -122.21 },
+  '94039': { lat: 37.389, lng: -122.082 },
+  '94040': { lat: 37.38, lng: -122.09 },
+  '94041': { lat: 37.39, lng: -122.07 },
+  '94042': { lat: 37.389, lng: -122.082 },
+  '94043': { lat: 37.41, lng: -122.09 },
+  '94061': { lat: 37.4634, lng: -122.2257 },
+  '94062': { lat: 37.4109, lng: -122.2881 },
+  '94085': { lat: 37.39, lng: -122.02 },
+  '94086': { lat: 37.37, lng: -122.02 },
+  '94087': { lat: 37.35, lng: -122.03 },
+  '94088': { lat: 37.37, lng: -122.02 },
+  '94089': { lat: 37.4, lng: -122 },
+  '94303': { lat: 37.45, lng: -122.12 },
+  '94304': { lat: 37.42, lng: -122.16 },
+  '94306': { lat: 37.41, lng: -122.13 },
+  '95002': { lat: 37.425, lng: -121.976 },
+  '95008': { lat: 37.277, lng: -121.953 },
+  '95009': { lat: 37.29, lng: -121.95 },
+  '95011': { lat: 37.29, lng: -121.96 },
+  '95014': { lat: 37.3, lng: -122.07 },
+  '95015': { lat: 37.29, lng: -122.09 },
+  '95030': { lat: 37.2282, lng: -121.9871 },
+  '95032': { lat: 37.2261, lng: -121.9302 },
+  '95050': { lat: 37.354, lng: -121.953 },
+  '95051': { lat: 37.35, lng: -121.98 },
+  '95052': { lat: 37.35, lng: -121.95 },
+  '95053': { lat: 37.3487, lng: 121.9366 },
+  '95054': { lat: 37.4, lng: -121.96 },
+  '95055': { lat: 37.35, lng: -121.98 },
+  '95056': { lat: 37.4, lng: -121.96 },
+  '95101': { lat: 37.3905, lng: -121.8854 },
+  '95106': { lat: 37.34, lng: 121.89 },
+  '95108': { lat: 37.34, lng: 121.89 },
+  '95109': { lat: 37.34, lng: 121.89 },
+  '95110': { lat: 37.3546, lng: 121.9189 },
+  '95111': { lat: 37.2857, lng: -121.8278 },
+  '95112': { lat: 37.3456, lng: -121.8847 },
+  '95113': { lat: 37.3327, lng: -121.8918 },
+  '95115': { lat: 37.3355, lng: -121.8938 },
+  '95116': { lat: 37.3559, lng: -121.8506 },
+  '95117': { lat: 37.31, lng: -121.97 },
+  '95118': { lat: 37.259, lng: -121.8847 },
+  '95119': { lat: 37.2318, lng: -121.7822 },
+  '95120': { lat: 37.1697, lng: -121.8449 },
+  '95121': { lat: 37.3021, lng: -121.805 },
+  '95122': { lat: 37.3304, lng: -121.8392 },
+  '95123': { lat: 37.2375, lng: -121.8278 },
+  '95124': { lat: 37.2584, lng: 121.9189 },
+  '95125': { lat: 37.291, lng: 121.8904 },
+  '95126': { lat: 37.329, lng: 121.916 },
+  '95127': { lat: 37.3735, lng: -121.7594 },
+  '95128': { lat: 37.3189, lng: -121.9416 },
+  '95129': { lat: 37.31, lng: -122 },
+  '95130': { lat: 37.29, lng: -121.98 },
+  '95131': { lat: 37.3903, lng: 121.8961 },
+  '95132': { lat: 37.4011, lng: -121.8644 },
+  '95133': { lat: 37.3717, lng: -121.862 },
+  '95134': { lat: 37.4309, lng: 121.953 },
+  '95135': { lat: 37.2752, lng: 121.6853 },
+  '95136': { lat: 37.2692, lng: -121.8506 },
+  '95138': { lat: 37.2423, lng: -121.7309 },
+  '95148': { lat: 37.3316, lng: -121.7708 },
+  '95150': { lat: 37.39, lng: -121.9 },
+  '95151': { lat: 37.3223, lng: -121.8259 },
+  '95152': { lat: 37.4, lng: -121.85 },
+  '95153': { lat: 37.25, lng: -121.85 },
+  '95154': { lat: 37.26, lng: -121.91 },
+  '95155': { lat: 37.31, lng: -121.9 },
+  '95156': { lat: 37.36, lng: -121.84 },
+  '95157': { lat: 37.2999, lng: -121.9799 },
+  '95158': { lat: 37.26, lng: -121.88 },
+  '95160': { lat: 37.22, lng: -121.86 },
+  '95161': { lat: 37.39, lng: -121.89 },
+  '95164': { lat: 37.39, lng: -121.92 },
+  '95170': { lat: 37.3099, lng: -122.0099 },
+  '95172': { lat: 37.33, lng: -121.88 },
+  '95173': { lat: 37.34, lng: -121.89 },
+  '95190': { lat: 49.053, lng: -2.4513 },
+  '95191': { lat: 37.3339, lng: -121.9228 },
+  '95192': { lat: 37.34, lng: -121.88 },
+  '95193': { lat: 37.24, lng: -121.83 },
+  '95196': { lat: 37.3318, lng: -121.8979 },
+  '95194': { lat: 37.34, lng: -121.91 },
+  '94560': { lat: 37.52, lng: -122.05 },
+  '95013': { lat: 37.213, lng: -121.735 },
+  '95037': { lat: 37.1, lng: -121.7 },
+  '95139': { lat: 37.22, lng:  -121.75 },
+  '95141': { lat: 37.18, lng:  -121.76 }
+}
+
 const learnMoreButtons = document.querySelectorAll(".modal-toggle");
 const modalMask = document.querySelector(".mask");
 const closeModalBtn = document.querySelector(".close-modal");
 const modalTitle = document.getElementById("modal-title");
 const modalDesc = document.getElementById("modal-description");
 const teamsReviewButtons = document.querySelectorAll(".leave-review");
+const zipCodeSearch = document.getElementById("zipcode");
+const zipcodeOptions = document.getElementById("zipcode-options");
+
+zipCodeSearch && zipCodeSearch.addEventListener('keyup', () => {
+  let results = [];
+  let input = zipCodeSearch.value;
+  let reg = new RegExp(input)
+
+  if (input.length) {
+    results = Object.keys(zipCodes).filter(function(term) {
+      if (term.match(reg)) {
+        return term;
+      }
+    });
+  }
+  renderResults(results);
+});
+
+function renderResults(results) {
+  if (results.length > 0) {
+    zipcodeOptions.classList.remove('hidden')
+  } else {
+    zipcodeOptions.classList.add('hidden')
+  }
+  while(zipcodeOptions.children.length) {
+    zipcodeOptions.remove(zipcodeOptions.children[zipcodeOptions.children.length - 1]);
+  }
+
+  results.forEach(zip => {
+    const optionEl = document.createElement('option');
+    optionEl.setAttribute('value', zip);
+    optionEl.textContent = zip;
+    optionEl.classList.add('zipcode-option');
+    optionEl.addEventListener('click', () => populateMap(zip))
+    zipcodeOptions.appendChild(optionEl);
+  });
+
+  if (results.length !== 0) {
+    zipcodeOptions.size = 4
+  }
+}
+
+function populateMap(zipCode) {
+  zipcodeOptions.classList.add('hidden');
+  zipCodeSearch.value = zipCode;
+  const selectedLocation = zipCodes[zipCode]
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: selectedLocation,
+  });
+  // The marker, positioned at selectedLocation
+  const marker = new google.maps.Marker({
+    position: selectedLocation,
+    map: map,
+  });
+}
 
 function showModal(itemId, type) {
   if (type === "service") {
