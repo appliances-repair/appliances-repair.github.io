@@ -747,7 +747,7 @@ h3.brand-letter {
   display: flex;
 }
 
-#zip-search .secondary-btn {
+#zip-search .primary-btn {
   border: 1px solid var(--book-button-color);
   margin-top: 0;
 }
