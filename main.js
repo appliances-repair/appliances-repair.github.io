@@ -340,8 +340,9 @@ const modalTitle = document.getElementById("modal-title");
 const modalDesc = document.getElementById("modal-description");
 const teamsReviewButtons = document.querySelectorAll(".leave-review");
 const zipCodeSearchInput = document.getElementById("zipcode");
-const zipcodeOptions = document.getElementById("zipcode-options");
+// const zipcodeOptions = document.getElementById("zipcode-options");
 const zipCodeSearchButton = document.getElementById("zip-search-button");
+const zipInfo = document.getElementById("no-zipcode-served");
 
 zipCodeSearchButton &&
   zipCodeSearchButton.addEventListener(
@@ -350,60 +351,54 @@ zipCodeSearchButton &&
   );
 
 zipCodeSearchInput &&
-  zipCodeSearchInput.addEventListener("keyup", () => {
-    let results = [];
-    let input = zipCodeSearchInput.value;
-    let reg = new RegExp(input);
-
-    if (input.length) {
-      results = Object.keys(zipCodes).filter(function (term) {
-        if (term.match(reg)) {
-          return term;
-        }
-      });
-    }
-    renderResults(results);
+  zipCodeSearchInput.addEventListener("input", () => {
+    zipInfo.style.display = "none";
   });
 
-function renderResults(results) {
-  if (results.length > 0) {
-    zipcodeOptions.classList.remove("hidden");
-  } else {
-    zipcodeOptions.classList.add("hidden");
-  }
-  while (zipcodeOptions.children.length) {
-    zipcodeOptions.remove(
-      zipcodeOptions.children[zipcodeOptions.children.length - 1]
-    );
-  }
+// function renderResults(results) {
+//   if (results.length > 0) {
+//     zipcodeOptions.classList.remove("hidden");
+//   } else {
+//     zipcodeOptions.classList.add("hidden");
+//   }
+//   while (zipcodeOptions.children.length) {
+//     zipcodeOptions.remove(
+//       zipcodeOptions.children[zipcodeOptions.children.length - 1]
+//     );
+//   }
 
-  results.forEach((zip) => {
-    const optionEl = document.createElement("option");
-    optionEl.setAttribute("value", zip);
-    optionEl.textContent = zip;
-    optionEl.classList.add("zipcode-option");
-    optionEl.addEventListener("click", () => populateMap(zip));
-    zipcodeOptions.appendChild(optionEl);
-  });
+//   results.forEach((zip) => {
+//     const optionEl = document.createElement("option");
+//     optionEl.setAttribute("value", zip);
+//     optionEl.textContent = zip;
+//     optionEl.classList.add("zipcode-option");
+//     optionEl.addEventListener("click", () => populateMap(zip));
+//     zipcodeOptions.appendChild(optionEl);
+//   });
 
-  if (results.length !== 0) {
-    zipcodeOptions.size = 4;
-  }
-}
+//   if (results.length !== 0) {
+//     zipcodeOptions.size = 4;
+//   }
+// }
 
-function populateMap(zipCode) {
-  zipcodeOptions.classList.add("hidden");
-  zipCodeSearchInput.value = zipCode;
+function populateMap() {
+  // zipcodeOptions.classList.add("hidden");
+  zipInfo.style.display = "none";
+  const zipCode = zipCodeSearchInput.value;
   const selectedLocation = zipCodes[zipCode];
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
-    center: selectedLocation,
-  });
-  // The marker, positioned at selectedLocation
-  const marker = new google.maps.Marker({
-    position: selectedLocation,
-    map: map,
-  });
+  if (selectedLocation) {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 13,
+      center: selectedLocation,
+    });
+    // The marker, positioned at selectedLocation
+    const marker = new google.maps.Marker({
+      position: selectedLocation,
+      map: map,
+    });
+  } else {
+    zipInfo.style.display = "block";
+  }
 }
 
 function showModal(itemId, type) {
