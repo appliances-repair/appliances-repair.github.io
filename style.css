@@ -743,6 +743,15 @@ h3.brand-letter {
   display: none;
 }
 
+#zip-search {
+  display: flex;
+}
+
+#zip-search .secondary-btn {
+  border: 1px solid var(--book-button-color);
+  margin-top: 0;
+}
+
 @media screen and (max-width: 1400px) {
   #team-gallery {
     grid-template-columns: 1fr 1fr 1fr;
@@ -955,7 +964,7 @@ h3.brand-letter {
   }
 
   .brand-block {
-    position: absolute;
+    /* position: absolute; */
     display: none;
     border: none;
   }

@@ -339,13 +339,20 @@ const closeModalBtns = document.querySelectorAll(".close-modal");
 const modalTitle = document.getElementById("modal-title");
 const modalDesc = document.getElementById("modal-description");
 const teamsReviewButtons = document.querySelectorAll(".leave-review");
-const zipCodeSearch = document.getElementById("zipcode");
+const zipCodeSearchInput = document.getElementById("zipcode");
 const zipcodeOptions = document.getElementById("zipcode-options");
+const zipCodeSearchButton = document.getElementById("zip-search-button");
 
-zipCodeSearch &&
-  zipCodeSearch.addEventListener("keyup", () => {
+zipCodeSearchButton &&
+  zipCodeSearchButton.addEventListener(
+    "click",
+    () => zipCodeSearchInput.value && populateMap(zipCodeSearchInput.value)
+  );
+
+zipCodeSearchInput &&
+  zipCodeSearchInput.addEventListener("keyup", () => {
     let results = [];
-    let input = zipCodeSearch.value;
+    let input = zipCodeSearchInput.value;
     let reg = new RegExp(input);
 
     if (input.length) {
@@ -386,7 +393,7 @@ function renderResults(results) {
 
 function populateMap(zipCode) {
   zipcodeOptions.classList.add("hidden");
-  zipCodeSearch.value = zipCode;
+  zipCodeSearchInput.value = zipCode;
   const selectedLocation = zipCodes[zipCode];
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 13,

@@ -63,8 +63,11 @@
     </h2>
 
     <div id="map-block">
-      <input name="Name" type="text" id="zipcode" class="zipcode-input"
-        placeholder="Enter your ZIP code or pick a spot on the map to check">
+      <div id="zip-search">
+        <input name="Name" type="text" id="zipcode" class="zipcode-input"
+          placeholder="Enter your ZIP code or pick a spot on the map to check">
+        <button class="secondary-btn" id="zip-search-button">Search</button>
+      </div>
       <select id="zipcode-options" class="hidden"></select>
       <div id="map"></div>
     </div>
