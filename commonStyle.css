@@ -169,6 +169,10 @@ footer li a {
   color: var(--header-text-color);
 }
 
+footer .primary-btn {
+  width: 30vw;
+}
+
 /* ============================
     Large screen nav
 ============================= */
@@ -205,6 +209,10 @@ footer li a {
   .nav-item:not(:first-child) {
     margin-left: 56px;
   }
+
+  footer .primary-btn {
+    width: 25vw;
+  }
 }
 
 @media screen and (max-width: 744px) {
@@ -219,7 +227,7 @@ footer li a {
 
   footer .primary-btn {
     margin: 5% 0;
-    width: 25vw;
+    width: 30vw;
   }
 
   footer h5 {
